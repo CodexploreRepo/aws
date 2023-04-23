@@ -47,7 +47,7 @@ The ELT approach allows for rapidly loading large amounts of source data into th
 - A large volume of data needs to be quickly loaded into the warehouse.
 - All the required transformation steps can be executed using the native SQL capabilities of the warehouse's database engine.
 
-## Datalake
+## Data Lake
 ### Definition
 - A cloud data lake is a central, highly scalable repository in the cloud where an organization can manage exabytes of various types of data, such as the following:
   - Structured data (row-column-based tables)
@@ -59,6 +59,28 @@ The ELT approach allows for rapidly loading large amounts of source data into th
   - Code-based tools (such as Apache Spark)
   - Specialized machine learning tools
   - Business intelligence visualization tools.
+
+### Data Lake Logical Architecture
+<p align="center"><img width=700 src="https://user-images.githubusercontent.com/64508435/233855351-05a9ca05-670c-4cb4-98cf-02a2d1d20fa0.png"><br>Data lake logical layered architecture</p>
+
+#### Storage Layer and Storage Zones
+- At the center of the data lake architecture is the `storage layer`, which provides virtually unlimited, low-cost storage that can store a variety of datasets, irrespective of their structure or format.
+- The storage layer is organized into different zones, with each zone having a specific purpose:
+  - **Landing/raw zone**: This is the zone where the ingestion layer writes data, as-is, from the source systems. The landing/raw zone permanently stores the raw data from source.
+  - **Clean/transform zone**: The initial data processing of data in the landing/raw zone, such as validating, cleaning, and optimizing datasets, writes data into the clean/transform zone. The data here is often stored in optimized formats such as Parquet, and it is often partitioned to accelerate query execution and downstream processing. Data in this zone may also have had PII information removed, masked, or replaced with tokens.
+  - **Curated/enriched zone**: The data in the clean/transformed zone may be further refined and enriched with business-specific logic and transformations, and this data is written to the curated/enriched zone. This data is in its most consumable state and meets all organization standards (cleanliness, file formats, schema). Data here is typically partitioned, cataloged, and optimized for the consumption layer
+
+#### Cataloging and search layer
+- The cataloging and search layer provides this metadata (schema, partitioning information, categorization, ownership, and more) about the datasets hosted in the storage layer. 
+
+#### Ingestion layer
+- The ingestion layer is responsible for connecting to diverse types of data sources and bringing their data into the storage layer of the data lake. 
+
+#### Processing layer
+- Once the ingestion layer brings data from a source system into the landing zone, it is the processing layer that makes it ready for consumption by data consumers. The processing layer transforms the data in the lake through various stages of data cleanup, standardization, and enrichment.
+
+#### Consumption layer
+- Once data has been ingested and processed to make it consumption-ready, it can be analyzed using several techniques, such as interactive query processing, business intelligence dashboarding, and machine learning.
 ## Data Lakehouse 
 ### Definition
 The lake house architecture approach is geared to natively integrate the best capabilities of data lakes and data warehousing, including the following:
