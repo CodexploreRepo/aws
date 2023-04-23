@@ -2,6 +2,7 @@
 - **ETL (extract, transform, and load)**: `AWS Glue` is fully managed ETL (extract, transform, and load) AWS service to analyze and categorize data. 
   - In an ETL pipeline, transformations are performed outside the data warehouse using custom scripts, a cloud-native ETL service such as AWS Glue, or a specialized ETL tool from a commercial vendor such as Informatica, Talend, DataStage, Microsoft, or Pentaho. 
   - You can use AWS Glue crawlers to automatically infer database and table schema from your data in Amazon S3 and store the associated metadata in the `AWS Glue Data Catalog`.
+  - AWS Glue also provides a **serverless Apache Spark environment**
 - **Cloud data warehousing**: `Amazon Redshift`, Snowflake, Google BigQuery, and Azure Synapse
 - **Cloud object stores**: `Amazon S3`
   - Can store hundreds of petabytes of data at a fraction of the cost of on-premises storage, and they support storing data regardless of its source, format, or structure.
