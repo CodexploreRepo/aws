@@ -36,9 +36,5 @@
     - Amazon EMR (a managed Spark environment) include native Spark plugins that can access Redshift tables, in addition to objects in S3 buckets, all in the same job. 
   - `Amazon Athena` supports query federation, which enables Athena to query data in the data lake, as well as data stored in other engines such as Amazon Redshift or an Amazon RDS database.
 
-
-
-In future chapters, the hands-on exercises will cover various tasks related to ingesting, transforming, and querying data in the data lake, but in this chapter, we are still setting up some of the foundational tasks. In the next section, we will work through the process of installing and configuring the AWS Command Line Interface (CLI), and we will create an Amazon S3 bucket.
-
 <p align="center"><img width=700 src="https://user-images.githubusercontent.com/64508435/233845970-bc46c6ad-0919-4fad-bef8-9f48ee0e8326.png"
 </p>  
