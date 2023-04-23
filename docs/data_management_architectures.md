@@ -39,6 +39,26 @@ An ETL approach to building a data pipeline is typically used when the following
 #### ELT 
 - On the other hand, an ELT pipeline extracts data (typically, highly structured data) from various sources and loads it as-is (matching the sources systems' data structures) into a staging area within the data warehouse. 
 - The database engine powering the data warehouse is then used to perform transformation operations on the staged data to make it ready for consumption.
+<p align="center"><img width=600 src="https://user-images.githubusercontent.com/64508435/233854974-ee90d91b-0cd7-47be-a49f-be625286ded8.png"><br>ELT pipeline</p>
+
+##### When to use ELT ?
+The ELT approach allows for rapidly loading large amounts of source data into the warehouse. Furthermore, the MPP architecture of modern data warehouses can significantly accelerate the transform steps in ELT pipelines. The ELT approach is typically leveraged when the following are true:
+- Data sources and the warehouse have similar database technologies, making it easier to directly load source data into the staging tables in the warehouse.
+- A large volume of data needs to be quickly loaded into the warehouse.
+- All the required transformation steps can be executed using the native SQL capabilities of the warehouse's database engine.
+
+## Datalake
+### Definition
+- A cloud data lake is a central, highly scalable repository in the cloud where an organization can manage exabytes of various types of data, such as the following:
+  - Structured data (row-column-based tables)
+  - Semi-structured data (such as JSON and XML files, log records, and sensor data streams)
+  - Unstructured data (such as audio, video streams, Word/PDF documents, and emails)
+- Data from any of these sources can be quickly loaded into the data lake as-is (keeping the original source format and structure). Unlike with data warehouses, data does not need to be converted into a standard structure.
+- A cloud data lake also natively integrates with cloud analytic services that are decoupled from data lake storage and enables diverse analytic tools, including: 
+  - SQL
+  - Code-based tools (such as Apache Spark)
+  - Specialized machine learning tools
+  - Business intelligence visualization tools.
 ## Data Lakehouse 
 ### Definition
 The lake house architecture approach is geared to natively integrate the best capabilities of data lakes and data warehousing, including the following:
