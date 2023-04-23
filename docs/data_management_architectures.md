@@ -2,14 +2,31 @@
 
 ## Data Warehouse with Amazon Redshift
 - `Amazon Redshift` is a modern cloud-native data warehouses, leverage parallel processing and columnar storage to store and process petabytes of data. Amazon Redshift provides very high query throughput while processing high data volumes.
-<p align="center"><img width=600 src="https://user-images.githubusercontent.com/64508435/233819130-5bb29995-7694-4935-b99c-c1f28b340aa2.png"
-</p>
+<p align="center"><img width=600 src="https://user-images.githubusercontent.com/64508435/233819130-5bb29995-7694-4935-b99c-c1f28b340aa2.png"><br>Enterprise data warehousing architecture</p>
   
 - At the center of our architecture is the enterprise data warehouse, which hosts a set of data assets that contain current and historical data about key business subject areas. 
 - On the left-hand side, we have our source systems and an ETL pipeline to load the data into the warehouse. 
 - On the right-hand side, we can see several systems/applications that consume data from the data warehouse.
-  
-## ETL
+### Amazon Redshift cluster
+Amazon Redshift cluster contains several compute resources, along with their associated disk storage. There are two types of nodes in a Redshift cluster:
+- **1 leader node**, which interfaces with client applications, receives and parses queries, and coordinates query execution on compute nodes
+- **Multiple compute nodes**, which store warehouse data and run query execution steps in parallel.
+<p align="center"><img width=600 src="https://user-images.githubusercontent.com/64508435/233854168-82a7e899-6066-4283-a596-72e8aa3cd4ae.png"><br>Massively Parallel Processing (MPP) architecture of an Amazon Redshift cluster</p>
+
+### Understanding the role of `data marts`
+- Data warehouses contain data from all relevant business domains and have a comprehensive but complex schema. 
+- A `data mart` is focused on a single business subject repository (for example, marketing, sales, or finance) and is typically created to serve a narrower group of business users, such as a single department. 
+- A data mart often has a set of denormalized fact tables organized in a much simpler schema compared to that of an enterprise data warehouse
+### Feeding data into the warehouse 
+- Feeding data into the warehouse – ETL and ELT pipelines
+- The decision as to whether to build an Extract-Transform-Load (ETL) or Extract-Load-Transform (ELT) data pipeline is based on the following:
+  - The complexity of the required data transformations.
+  - The speed at which source data needs to be made available for analysis in the data warehouse after it's produced in the source system.
+#### ETL
+- To bring data into the warehouse (and optionally, data marts), organizations typically build data pipelines that do the following:
+  - Extract data from source systems.
+  - Transform source data by validating, cleaning, standardizing, and curating it.
+  - Load the transformed source data into the enterprise data warehouse schema, and optionally a data mart as well.
 - In an ETL pipeline, transformations are performed outside the data warehouse using custom scripts, a cloud-native ETL service such as AWS Glue, or a specialized ETL tool from a commercial vendor such as Informatica, Talend, DataStage, Microsoft, or Pentaho.
 
 ## Data Lakehouse 
