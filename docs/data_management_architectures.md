@@ -24,11 +24,21 @@ Amazon Redshift cluster contains several compute resources, along with their ass
   - The speed at which source data needs to be made available for analysis in the data warehouse after it's produced in the source system.
 #### ETL
 - To bring data into the warehouse (and optionally, data marts), organizations typically build data pipelines that do the following:
-  - Extract data from source systems.
-  - Transform source data by validating, cleaning, standardizing, and curating it.
+  - Extract data from various sources and stores it in a staging area first (a system outside the warehouse).
+  - Transform source data by validating, cleaning, standardizing, curating and converting it into a form suitable so that it can be loaded into the data warehouse (and optionally, data marts). 
   - Load the transformed source data into the enterprise data warehouse schema, and optionally a data mart as well.
-- In an ETL pipeline, transformations are performed outside the data warehouse using custom scripts, a cloud-native ETL service such as AWS Glue, or a specialized ETL tool from a commercial vendor such as Informatica, Talend, DataStage, Microsoft, or Pentaho.
+<p align="center"><img width=600 src="https://user-images.githubusercontent.com/64508435/233854716-a14f3925-0285-48bc-931b-a73e3f2bca9a.png"><br>ETL pipeline</p>
 
+- In an ETL pipeline, transformations are performed outside the data warehouse using custom scripts, a cloud-native ETL service such as AWS Glue, or a specialized ETL tool from a commercial vendor such as Informatica, Talend, DataStage, Microsoft, or Pentaho.
+##### When to use ETL ?
+An ETL approach to building a data pipeline is typically used when the following are true:
+- Source database technologies and formats are different from those of the data warehouse
+- Data volumes are small to moderate
+- Data transformations are complex and compute-intensive
+- 
+#### ELT 
+- On the other hand, an ELT pipeline extracts data (typically, highly structured data) from various sources and loads it as-is (matching the sources systems' data structures) into a staging area within the data warehouse. 
+- The database engine powering the data warehouse is then used to perform transformation operations on the staged data to make it ready for consumption.
 ## Data Lakehouse 
 ### Definition
 The lake house architecture approach is geared to natively integrate the best capabilities of data lakes and data warehousing, including the following:
