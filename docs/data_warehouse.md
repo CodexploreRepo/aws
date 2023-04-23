@@ -21,13 +21,13 @@
 
  ### Building a data lakehouse on AWS
 - Two components that provide the key foundations for building a lake house architecture in AWS are 
-  - `Amazon Redshift Spectrum`: a feature of the Amazon Redshift data warehouse service that enables Redshift to read data stored in S3. 
+  - `Amazon Redshift Spectrum` a feature of the Amazon Redshift data warehouse service that enables Redshift to read data stored in S3. 
     - a query processing layer that uses Amazon-managed compute nodes to natively query structured and semi-structured data hosted in data lake storage (S3). 
     - Spectrum enables an Amazon Redshift data warehouse to present a single unified interface, where users can run SQL statements that combine data from both Redshift (data warehouse) and S3 (data lake). 
     - Spectrum thus enables users to query all the data in the lake house using a single SQL interface.
-  - `AWS Lake Formation`: provides the **central lake house catalog** where users and analytics services can search, discover, and retrieve metadata for a dataset by using the catalog automation capability provided by AWS Glue.
-  - Glue can be configured to periodically crawl through the lake house storage and discover datasets, extract their metadata (such as location, schema, format, partition information, and more), and then store this metadata as a table in the central Lake Formation catalog. 
-  - The metadata of a table in the catalog can be used by AWS analytics services, such as Amazon Athena, to locate a corresponding dataset in the lake house storage and apply schema-on-read to that dataset during query execution.
+  - `AWS Lake Formation` provides the **central lake house catalog** where users and analytics services can search, discover, and retrieve metadata for a dataset by using the catalog automation capability provided by AWS Glue.
+    - Glue can be configured to periodically crawl through the lake house storage and discover datasets, extract their metadata (such as location, schema, format, partition information, and more), and then store this metadata as a table in the central Lake Formation catalog. 
+    - The metadata of a table in the catalog can be used by AWS analytics services, such as Amazon Athena, to locate a corresponding dataset in the lake house storage and apply schema-on-read to that dataset during query execution.
 
 
 <p align="center"><img width=700 src="https://user-images.githubusercontent.com/64508435/233845970-bc46c6ad-0919-4fad-bef8-9f48ee0e8326.png"
