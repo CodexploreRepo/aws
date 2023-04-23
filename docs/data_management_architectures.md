@@ -13,6 +13,14 @@
 - In an ETL pipeline, transformations are performed outside the data warehouse using custom scripts, a cloud-native ETL service such as AWS Glue, or a specialized ETL tool from a commercial vendor such as Informatica, Talend, DataStage, Microsoft, or Pentaho.
 
 ## Data Lakehouse 
+### Definition
+The lake house architecture approach is geared to natively integrate the best capabilities of data lakes and data warehousing, including the following:
+- Ability to quickly ingest any type of data
+- Storing and processing petabytes of unstructured, semi-structured, and structured data
+- Support for ACID transactions (the ability to concurrently read, insert, update, and delete records in a dataset managed by the data lakehouse)
+- Low latency data access
+- Ability to consume data with a variety of tools, including SQL, Spark, machine learning frameworks, and business intelligence tools
+
 ### Data Lakehouse Implemenetations
 - Over the last 2 to 3 years, various cloud providers, software providers, and open source organizations have been building new products to enable this move toward a **data lakehouse architecture**.
 - The implementation approaches to a data lakehouse (also sometimes referred to as data lakehouse) vary across different platform providers:
