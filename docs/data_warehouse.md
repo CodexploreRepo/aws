@@ -6,5 +6,8 @@
 - At the center of our architecture is the enterprise data warehouse, which hosts a set of data assets that contain current and historical data about key business subject areas. 
 - On the left-hand side, we have our source systems and an ETL pipeline to load the data into the warehouse. 
 - On the right-hand side, we can see several systems/applications that consume data from the data warehouse.
+  
+## ETL
+- In an ETL pipeline, transformations are performed outside the data warehouse using custom scripts, a cloud-native ETL service such as AWS Glue, or a specialized ETL tool from a commercial vendor such as Informatica, Talend, DataStage, Microsoft, or Pentaho.
 
   
