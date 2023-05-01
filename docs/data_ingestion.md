@@ -1,4 +1,4 @@
-# AWS Services for Transforming Data
+# AWS Services for Ingesting Data
 The first step in building big data analytic solutions is to ingest data from a variety of sources into AWS
 
 ## Amazon Database Migration Service (DMS)
