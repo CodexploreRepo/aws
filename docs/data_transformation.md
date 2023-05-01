@@ -21,6 +21,10 @@
 
 ### AWS Glue Data Catalog
 - To complement the ETL processing functionality, AWS Glue also includes a `data catalog` that can be used to provide a logical view of data stored physically on a disk, and objects in the catalog can then be directly referenced from your ETL code.
+- The AWS Glue Data Catalog is a **Hive metastore-compatible catalog**, i.e. the AWS Glue catalog works with a variety of other services and third-party products that can integrate with Hive metastore-compatible catalogs.
 - For example, the data catalog consists of a number of databases at the top level (such as the HR database), and each database contains one or more tables (such as the Employee table), and each table contains metadata, such as the column headings and data types for each column (such as employee_id, lastname, firstname, address, and dept), as well as references to the S3 location for the data that makes up that table.
 <p align="center"><img width=600 src="https://user-images.githubusercontent.com/64508435/235410930-642298ab-1439-4980-9be8-4a89fe71eb9c.png"><br>AWS Glue Data Catalog showing a logical view of the Employee table</p>
 
+### AWS Glue crawlers
+- AWS Glue crawlers are processes that can examine a data source (such as a path in an S3 bucket) and automatically infer the schema and other information about that data source, so that the AWS Glue Data Catalog can be automatically populated with relevant information.
+- For example, we could point an AWS Glue Crawler at the S3 location where DMS replicated the Employee table of our HR database. When the Glue Crawler runs, it examines a portion of each of the files in that location, identifies the file type (CSV, Parquet), uses a classifier to infer the schema of the file (column headings and types), and then adds that information into a database in the Glue catalog.
