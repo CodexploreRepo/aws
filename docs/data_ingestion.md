@@ -58,3 +58,12 @@ The first step in building big data analytic solutions is to ingest data from a 
 #### When to use & not to use Amazon Kinesis Agent
 - **When to use**: The Amazon Kinesis Agent is ideal for when you want to stream data to Kinesis that is being written to a file in a separate process (such as log files).
 - **When not to use**: If you have a custom application where you want to emit streaming events (such as a mobile application, or IoT device) you may want to consider using the `Amazon Kinesis Producer Library (KPL)`, or the `AWS SDK`, to integrate sending streaming data directly with your application.
+
+## Amazon MSK for Streaming Data Ingestion
+- Apache Kafka is a popular open source distributed event streaming platform that enables an organization to create high-performance streaming data pipelines and applications, and Amazon MSK (Managed Streaming for Apache Kafka) is a managed version of Apache Kafka available from AWS.
+- While Apache Kafka is a popular choice for organizations, it can be a challenge to install, scale, update, and manage in an on-premises environment, often requiring specialized skills. 
+- To simplify these tasks, AWS offers Amazon MSK, which enables an organization to deploy an Apache Kafka cluster with a few clicks in the console, and reduces the management overhead by automatically monitoring cluster health and replacing failed components.
+
+### When to use & not to use Amazon MSK
+- **When to use**: Amazon MSK is an ideal choice if your use case is a replacement for an existing Apache Kafka cluster, or if you want to take advantage of the many third-party integrations from the open source Apache Kafka ecosystem.
+- **When not to use**: Amazon Kinesis may be a better streaming solution if you are creating a new solution from scratch, as Kinesis is serverless and you only pay for data throughput (whereas with Amazon MSK you pay for the cluster, whether you are sending data through it or not).
