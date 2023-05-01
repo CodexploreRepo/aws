@@ -16,5 +16,5 @@
   - Support for ACID transactions (the ability to concurrently read, insert, update, and delete records in a dataset managed by the data lakehouse)
   - Low latency data access
   - Ability to consume data with a variety of tools, including SQL, Spark, machine learning frameworks, and business intelligence tools
-- **Database Migration Service (DMS)** (Amazon DMS) is a versatile tool that can be used to migrate existing database systems to a new database engine, such as migrating an existing Oracle database to an Amazon Aurora with PostgreSQL compatibility database. But from an analytics perspective, Amazon DMS can also be used to run continuous replication from a number of common database engines into an Amazon S3 data lake.
+- **Database Migration Service (Amazon DMS)** is a versatile tool that can be used to migrate existing database systems to a new database engine, such as migrating an existing Oracle database to an Amazon Aurora with PostgreSQL compatibility database. But from an analytics perspective, Amazon DMS can also be used to run continuous replication from a number of common database engines into an Amazon S3 data lake.
 
