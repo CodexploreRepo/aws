@@ -28,3 +28,21 @@
 ### AWS Glue crawlers
 - AWS Glue crawlers are processes that can examine a data source (such as a path in an S3 bucket) and automatically infer the schema and other information about that data source, so that the AWS Glue Data Catalog can be automatically populated with relevant information.
 - For example, we could point an AWS Glue Crawler at the S3 location where DMS replicated the Employee table of our HR database. When the Glue Crawler runs, it examines a portion of each of the files in that location, identifies the file type (CSV, Parquet), uses a classifier to infer the schema of the file (column headings and types), and then adds that information into a database in the Glue catalog.
+
+## Amazon EMR for Hadoop Ecosystem Processing
+- Amazon EMR provides a managed platform for running popular open source big data processing tools, such as Apache Spark, Apache Hive, Apache Hudi, Apache HBase, Presto, Pig, and others. 
+- Amazon EMR takes care of the complexities of deploying these tools and managing the underlying clustered Amazon EC2 compute resources.
+- You might be wondering why AWS has two services (Amazon EMR & AWS Glue) that effectively offer the same big data processing engine. 
+  - AWS Glue offers a serverless environment for running Apache Spark
+     -  AWS Glue you pay a slightly higher cost for an equivalent sized server than you would with Amazon EMR, but AWS Glue requires far less understanding or experience with regard to running an Apache Spark environment 
+  - Amazon EMR you need to specify the detailed configuration of the cluster you want to run Apache Spark.
+     - If your use case would benefit from being able to more finely tune the environment where Apache Spark runs, then Amazon EMR would be a better fit as it provides more options for specifying the configuration of the compute cluster and Spark settings than AWS Glue allows  
+- The other important differentiator is that Amazon EMR offers many additional frameworks and tools for big data processing such as Apache Hive, Presto, or other toolsets supported in EMR, then Amazon EMR would be a great fit.
+<p align="center"><img width=600 src="https://user-images.githubusercontent.com/64508435/235547401-027ae44b-1eba-45e7-b26f-af5ab62cdabb.png"><br>High-level overview of an EMR cluster</p>
+
+- Each EMR cluster requires 
+  - a master node
+  - at least one core node (a worker node that includes local storage)
+  - optionally a number of task nodes (worker nodes that do not have any local storage).
+
+
