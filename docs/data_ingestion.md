@@ -38,6 +38,18 @@ The first step in building big data analytic solutions is to ingest data from a 
 - In this example, you could install the Kinesis Agent on the web server and configure it to monitor the Apache web server log files.
 - **When to use**: Amazon Kinesis Firehose is the ideal choice for when you want to receive streaming data, buffer that data for a period, and then write the data to one of the targets supported by Kinesis Firehose (such as Amazon S3, Amazon Redshift, Amazon Elasticsearch, or a supported third-party service).
 - **When not to use**: If your use case requires very low latency processing of incoming streaming data (that is, immediate reading of received records), or you want to use a custom application to process your incoming records or deliver records to a service not supported by Amazon Kinesis Firehose, then you may want to consider using `Amazon Kinesis Data Streams` or `Amazon Managed Streaming for Apache Kafka (MSK)` instead.
+
+#### Kinesis Data Streams
+- Kinesis Data Streams provides increased flexibility for how data is consumed and makes the incoming data available to your streaming applications with very low latency 
+- You can write to Kinesis Data Streams using the Kinesis Agent, or you can develop your own custom applications using the AWS SDK or the KPL, a library that simplifies writing data records with high throughput to a Kinesis data stream.
+- **When to use**: Amazon Kinesis Data Streams is ideal for use cases where you want to process incoming data as it is received, or you want to create a high-availability cluster of servers to process incoming data with a custom application.
+- **When not to use**: If you have a simple use case that requires you to write data to specific services in near real time, you should consider Kinesis Firehose if it supports your target destination. If you are looking to migrate an existing Apache Kafka cluster to AWS, then you may want to consider migrating to Amazon MSK. If Apache Kafka supports third-party integration that would be useful to you, you may want to consider Amazon MSK.
+
+#### Amazon Kinesis Data Analytics
+- Amazon Kinesis Data Analytics simplifies the process of processing streaming data, using either standard SQL queries or an Apache Flink application.
+- An example of a use case for Kinesis Data Analytics is to analyze incoming clickstream data from an e-commerce website to get near real-time insight into the sales of a product. 
+  - This enables the business to quickly get answers to questions such as "how many sales of product x have there been in each 5-minute period since our promotion went live?"
+- **When to use**: If you want to use SQL expressions to analyze data or extract key metrics over a rolling time period, Kinesis Data Analytics significantly simplifies this task. If you have an existing Apache Flink application that you want to migrate to the cloud, consider running the application using Kinesis Data Analytics. 
 ### Amazon Kinesis Agent
 - In addition to the AWS Kinesis services, AWS also provides an agent to easily consume data from a file and write that data out in a stream to either Kinesis Data Streams or Kinesis Data Firehose.
 - The agent can be configured to monitor a set of files, and as new data is written to the file, the agent buffers the data (configurable for a duration of between 1 second and 15 minutes) and then writes the data to Kinesis. The agent handles retry on failure, as well as file rotation and checkpointing.
