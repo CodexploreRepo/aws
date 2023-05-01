@@ -29,11 +29,15 @@ The first step in building big data analytic solutions is to ingest data from a 
 ## Amazon Kinesis for Streaming Data Ingestion
 - Amazon Kinesis is a managed service that simplifies the process of ingesting and processing streaming data in real time, or near real time.
 ### Amazon Kinesis services
-  - `Kinesis Data Firehose`: Ingests streaming data, buffers for a configurable period, then writes out to a limited set of targets (S3, Redshift, Elasticsearch, Splunk, and others)
+  - `Kinesis Data Firehose`: Ingests  data in near real time from streaming sources, buffers for a configurable period, then writes out to a limited set of Amazon targets (S3, Redshift, Elasticsearch) as well as third-party services (such as Splunk, Datadog, and New Relic).
   - `Kinesis Data Streams`: Ingests real-time data streams, processing the incoming data with a custom application and low latency
   - `Kinesis Data Analytics`: Reads data from a streaming source and uses SQL statements or Apache Flink code to perform analytics on the stream
   - `Kinesis Video Streams`: Processes streaming video or audio streams, as well as other time-serialized data such as thermal imagery and RADAR data
-
+#### Kinesis Data Firehose
+- A common use case for data engineering purposes is to ingest website clickstream data from the Apache web logs on a web server and write that data out to an S3 data lake (or a Redshift data warehouse).
+- In this example, you could install the Kinesis Agent on the web server and configure it to monitor the Apache web server log files.
+- **When to use**: Amazon Kinesis Firehose is the ideal choice for when you want to receive streaming data, buffer that data for a period, and then write the data to one of the targets supported by Kinesis Firehose (such as Amazon S3, Amazon Redshift, Amazon Elasticsearch, or a supported third-party service).
+- **When not to use**: If your use case requires very low latency processing of incoming streaming data (that is, immediate reading of received records), or you want to use a custom application to process your incoming records or deliver records to a service not supported by Amazon Kinesis Firehose, then you may want to consider using `Amazon Kinesis Data Streams` or `Amazon Managed Streaming for Apache Kafka (MSK)` instead.
 ### Amazon Kinesis Agent
 - In addition to the AWS Kinesis services, AWS also provides an agent to easily consume data from a file and write that data out in a stream to either Kinesis Data Streams or Kinesis Data Firehose.
 - The agent can be configured to monitor a set of files, and as new data is written to the file, the agent buffers the data (configurable for a duration of between 1 second and 15 minutes) and then writes the data to Kinesis. The agent handles retry on failure, as well as file rotation and checkpointing.
