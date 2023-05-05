@@ -1,5 +1,6 @@
 # List of AWS Services
 - `Amazon Athena` supports query federation, which enables Athena to query data in the data lake, as well as data stored in other engines such as Amazon Redshift or an Amazon RDS database.
+  - `Athena Federated Query`, a feature of Athena, enables you to build connectors so that Athena can query other data sources, beyond just the data in an S3 data lake.
 - **ETL (extract, transform, and load)**: `AWS Glue` is fully managed ETL (extract, transform, and load) AWS service to analyze and categorize data. 
   - In an ETL pipeline, transformations are performed outside the data warehouse using custom scripts, a cloud-native ETL service such as AWS Glue, or a specialized ETL tool from a commercial vendor such as Informatica, Talend, DataStage, Microsoft, or Pentaho. 
   - You can use AWS Glue crawlers to automatically infer database and table schema from your data in Amazon S3 and store the associated metadata in the `AWS Glue Data Catalog`.
