@@ -7,4 +7,7 @@
 - **Massively Parallel Processing** (MPP) cloud data warehouses implement a distributed query processing architecture called (MPP) to accelerate queries on massive volumes of data. 
 - **MSK** Managed Streaming for Apache Kafka
 - **S3** Amazon Simple Storage Service
+- **Serverless** meaning that you do not need to deploy or manage any infrastructure, and you pay for the service based on your usage, not on fixed infrastructure costs.
+
+
 
