@@ -9,6 +9,7 @@
 - **MWAA** Managed Workflows for Apache Airflow 
 - **S3** Amazon Simple Storage Service
 - **Serverless** meaning that you do not need to deploy or manage any infrastructure, and you pay for the service based on your usage, not on fixed infrastructure costs.
+- **Virtual Private Cloud (Amazon VPC)**, the private network in your AWS account, gives you full control over your virtual networking environment, including resource placement, connectivity, and security. 
 
 
 
