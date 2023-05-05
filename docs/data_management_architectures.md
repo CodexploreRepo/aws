@@ -13,15 +13,21 @@ Amazon Redshift cluster contains several compute resources, along with their ass
 - **Multiple compute nodes**, which store warehouse data and run query execution steps in parallel.
 <p align="center"><img width=600 src="https://user-images.githubusercontent.com/64508435/233854168-82a7e899-6066-4283-a596-72e8aa3cd4ae.png"><br>Massively Parallel Processing (MPP) architecture of an Amazon Redshift cluster</p>
 
-### SQL connection with Redshift
-User connects to the Redshift leader node (via JDBC or ODBC). This node does not query data directly but is effectively the central brain behind all the queries that do run on the cluster. We will demo with below example
-1. Using a SQL client, the user makes a connection and authenticates with the Redshift leader node, and sends through a SQL statement that queries 
+### SQL queries in Redshift cluster
+- User connects to the Redshift leader node (via JDBC or ODBC). This node does not query data directly but is effectively the central brain behind all the queries that do run on the cluster. 
+- We will demo with below example: In a modern analytic environment, a common use case for a data warehouse would be to load a subset of data from the data lake into the warehouse, based on which data needs to be queried most frequently and which data needs to be used for queries requiring the best possible performance.
+  - Knowing that 80% of the reporting and queries will be on the last 12 months of sales data, the data engineer may also design a process to remove all data that's more than 12 months old from the data warehouse.
+  - 20% of queries that need to include historical data that's more than 12 months old? That's where **Redshift Spectrum** comes in, a feature of Amazon Redshift that *enables a user to write a single query that queries data that has been loaded into the data warehouse, as well as data that exists outside the data warehouse, in the data lake*.
+    -  To enable this, the data engineer can configure the Redshift cluster to connect with the AWS Glue Data Catalog, where all the databases and tables for our data lake are defined. 
+    - Once that has been configured, a user can reference both internal Redshift tables and tables registered in the Glue data catalog.
+
+- Step 1. Using a SQL client, the user makes a connection and authenticates with the Redshift leader node, and sends through a SQL statement that queries 
   - `current_sales` table (a table in which the data exists within the Redshift cluster and contains the past 12 months of sales data)
   - `historical_sales` table (a table that is registered in the Glue data catalog, and where the data files are located in the Amazon S3 data lake, which contains historical sales data going back 10 years).
-2. The leader node analyzes and optimizes the query, compiles a query plan, and pushes individual query execution plans to the compute nodes in the cluster.
-3. The compute nodes query data they have locally (for the `current_sales` table) and query the AWS Glue Data Catalog to gather information on the external `historical_sales` table. Using the information they gathered, they can optimize queries for the external data and push those queries out to the **Redshift Spectrum** layer.
-4. **Redshift Spectrum** is outside of a customer's Redshift cluster and is made up of thousands of worker nodes (Amazon EC2 compute instances) in each AWS Region. These worker nodes are able to scan, filter, and aggregate data from the files in Amazon S3, and then stream results back to the Amazon Redshift cluster.
-5. The **Redshift cluster** performs final operations to join and merge data, and then returns the results to the user's SQL client.
+- Step 2. The leader node analyzes and optimizes the query, compiles a query plan, and pushes individual query execution plans to the compute nodes in the cluster.
+- Step 3. The compute nodes query data they have locally (for the `current_sales` table) and query the AWS Glue Data Catalog to gather information on the external `historical_sales` table. Using the information they gathered, they can optimize queries for the external data and push those queries out to the **Redshift Spectrum** layer.
+- Step 4. **Redshift Spectrum** is outside of a customer's Redshift cluster and is made up of thousands of worker nodes (Amazon EC2 compute instances) in each AWS Region. These worker nodes are able to scan, filter, and aggregate data from the files in Amazon S3, and then stream results back to the Amazon Redshift cluster.
+- Step 5. The **Redshift cluster** performs final operations to join and merge data, and then returns the results to the user's SQL client.
 <p align="center"><img width=600 src="https://user-images.githubusercontent.com/64508435/236505677-4ab3b080-8f41-497f-9db6-26b5eb700b78.png"><br>Redshift architecture</p>
 
 ### Understanding the role of `data marts`
