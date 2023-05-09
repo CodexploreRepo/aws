@@ -132,8 +132,13 @@ aws s3 ls s3://upskills-clean-zone/testdb/csvparquet/
 
 Error 1: `Memory Size: 128 MB Max Memory Used: 128 MB`
 
-- Reason: it was running out of memory on my Lambda function execution, updating the max memory, and the issue was resolved.
+- **Reason**: it was running out of memory on my Lambda function execution
+- **Solution**: updating the max memory, and the issue was resolved.
 
 ```bash
+# Error
 REPORT RequestId: 4f8dc5b8-ae49-48ff-b3f1-d220ed884caf	Duration: 62056.99 ms	Billed Duration: 60000 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	Init Duration: 4068.61 ms
+
+# Normal Log
+REPORT RequestId: 5615cbd5-1305-42c9-8c20-9bd0360c637f	Duration: 6759.49 ms	Billed Duration: 6760 ms	Memory Size: 256 MB	Max Memory Used: 252 MB	Init Duration: 3975.13 ms
 ```
