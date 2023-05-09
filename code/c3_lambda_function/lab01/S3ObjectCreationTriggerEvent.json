@@ -1,0 +1,32 @@
+{
+  "Records": [
+    {
+      "eventVersion": "2.1",
+      "eventSource": "aws:s3",
+      "awsRegion": "ap-southeast-1",
+      "eventTime": "2023-05-08T13:53:40.002Z",
+      "eventName": "ObjectCreated:Put",
+      "userIdentity": { "principalId": "A267OM2HTAODE0" },
+      "requestParameters": { "sourceIPAddress": "49.245.105.135" },
+      "responseElements": {
+        "x-amz-request-id": "AWMHGHYHQ3MPZH3R",
+        "x-amz-id-2": "NHFzJbiaYZhkCi4MmAD6yNwFh1Zul4m4/zrJLxgcorUhHdqrtpurriQeD2P6MU8SaplUlHrWPwIjwKw9/bbni5abFqbUfi7k"
+      },
+      "s3": {
+        "s3SchemaVersion": "1.0",
+        "configurationId": "3ff08b9e-e423-4a6d-ab20-e35f866f39a7",
+        "bucket": {
+          "name": "upskills-landing-zone",
+          "ownerIdentity": { "principalId": "A267OM2HTAODE0" },
+          "arn": "arn:aws:s3:::upskills-landing-zone"
+        },
+        "object": {
+          "key": "testdb/csvparquet/test.csv",
+          "size": 53,
+          "eTag": "a5878163c52ff235de5fa4ea09d38021",
+          "sequencer": "006458FEE3F5E56B0E"
+        }
+      }
+    }
+  ]
+}
