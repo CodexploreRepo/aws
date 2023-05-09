@@ -121,7 +121,8 @@ aws s3 cp test.csv s3://upskills-landing-zone/testdb/csvparquet/test.csv
 
 - If everything has been configured correctly, your Lambda function will have been triggered and
   - Will have written out a Parquet-formatted file to your target S3 bucket
-  - created a Glue datalog for the table.
+  - created a glue datalog for the table as shown below
+    <img src="../.././assets/img/c3_aws_lambda_glue_data_catalog.png">
 
 ```bash
 aws s3 ls s3://upskills-clean-zone/testdb/csvparquet/
@@ -129,7 +130,7 @@ aws s3 ls s3://upskills-clean-zone/testdb/csvparquet/
 
 ## Common Error
 
-Error 1: Memory Size: 128 MB Max Memory Used: 128 MB
+Error 1: `Memory Size: 128 MB Max Memory Used: 128 MB`
 
 - Reason: it was running out of memory on my Lambda function execution, updating the max memory, and the issue was resolved.
 
