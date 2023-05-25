@@ -93,11 +93,11 @@
 
 ### AWS Data Catalog Service
 - Within AWS, there are two services for interacting with the data catalog.
-    - AWS Glue service:  
+    - `AWS Glue service`:  
       - AWS Glue **Catalog** is a Hive Metastore-compatible catalog that captures information about the underlying physical files and partitions.
         - can capture key/values about a table, and this can be used to record the data owner, whether the table contains PII data, and more.
       - AWS Glue **Crawlers**, a process that can be run to examine a data source, infer the schema of the data source, and then automatically populate the Glue data catalog with information on the dataset. 
-    - AWS Lake Formation service also provides an interface for the same catalog
+    - `AWS Lake Formation` service also provides an interface for the same catalog
         - The Lake Formation console does provide a more modern design, and also provides some additional functionality that is not possible with the Glue interface. This includes the following:
             - The ability to add key/value properties at the column level (with AWS Glue, you can only add properties at the table level)
             - The ability to configure access permissions at the database, table, and column level (more on this later in this chapter)
