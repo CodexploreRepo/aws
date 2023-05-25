@@ -1,8 +1,6 @@
 # Data Cataloging, Security, and Governance
 - Data storage must comply with local laws for how the data should be handled,
 - Data needs to be cataloged so that it is discoverable and useful to the organization.
-
-## Definition
 - **Data security** dictates how an organization should protect data to ensure that data is stored securely (such as in an encrypted state) and that access by unauthorized entities is prevented.
 - **Data governance** is related to ensuring that only people that need access to specific datasets to perform their job is granted the access.
   - Governance also applies to ensuring that an organization only uses and processes data on individuals in approved ways and that organizations provide data disclosures as required by law.
@@ -68,13 +66,19 @@
 - **Swamps** are known to be wet areas that smell pretty bad, and where some trees and other vegetation may grow, but the area is generally not fit to be used for most purposes
 - **Lake is** beautiful scenery with clean water, a beautiful sunset, and perhaps a few ducks gently floating on the water.
 
+### Data Catalog Definition
 - **Data catalogs**:
     - A data catalog enables business users to easily find datasets that may be useful to them, and to better understand the context around the dataset through metadata.
     - Broadly speaking, there are two types of data catalogs – business catalogs and technical catalogs. However, many catalog tools offer aspects of both business and technical catalogs.
-### Technical Catalog
+
+##### Organizational policies for capturing metadata
+- A policy needs to be enforced that ensures that all the data that is added to the data lake is captured in the data catalog. If data is added to the data lake and not captured in the catalog, you can very quickly end up with a data swamp – lots of data in the data lake but users are unable to find or understand the context of the data that is there.
+- If the technical data is captured in the data catalog but there is no policy to enforce the capture of business data, you can still end up with a data swamp.
+- Ultimately, you want to have a catalog that users can search to find datasets, and then have users be able to examine the metadata to understand the business context of the data.
+#### Technical Catalog
 - **Technical catalogs** are those that map data files in the data lake to a logical representation of those files in the form of databases and tables. In Chapter 3, The AWS Data Engineers Toolkit, we covered the AWS Glue service, which is an example of a data catalog tool with a technical focus.
     - The **Hive Metastore** is a well-known catalog that stores technical metadata for Hive tables (such as the *table schema, location, and partition information*). These are primarily technical attributes of the table, and the AWS Glue data catalog is an example of a Hive-compatible Metastore (meaning analytic services designed to work with a Hive Metastore catalog can use the Glue catalog).
-### Business Catalog 
+#### Business Catalog 
 - **Business catalog** focuses on enabling business metadata regarding the datasets to be captured and providing a catalog that is easy to search.
     - For example, with a business catalog, you may capture details about the following:
         - The owner of the dataset the business unit that the data relates to
@@ -84,5 +88,29 @@
         - How often the data is updated (hourly, daily, or weekly)
         - How this dataset is related to other datasets
 
-### Operational Catalog
+#### Operational Catalog
 - **Operational Catalog** captures an operational view of processes and events occuring all along the path to information delivery, job scheduling information such as where the data is comming, how often it should be updated, and when wast the actual last update
+
+### AWS Data Catalog Services
+#### AWS Glue Data Catalog
+- **Glue data catalog** is a Hive Metastore-compatible catalog that captures information about the underlying physical files and partitions. However, the Glue catalog is also able to capture other properties of the data. For example, the Glue catalog can capture key/values about a table, and this can be used to record the data owner, whether the table contains PII data, and more.
+- Popular data catalog solutions outside of AWS include the **Collibra Data Catalog** and the **Informatica Enterprise** Data Catalog.
+#### AWS Lake Formation Data Catalog
+- As discussed previously, the AWS Glue catalog is a technical data catalog that can capture some business attributes using key/value tags.
+    - For example, you can have a key called *data_owner* and an associated value as a tag on each table in the catalog.
+- Within AWS, there are two services for interacting with the data catalog.
+    - AWS Glue service
+    - AWS Lake Formation service also provides an interface for the same catalog
+        - The Lake Formation console does provide a more modern design, and also provides some additional functionality that is not possible with the Glue interface. This includes the following:
+            - The ability to add key/value properties at the column level (with AWS Glue, you can only add properties at the table level)
+            - The ability to configure access permissions at the database, table, and column level (more on this later in this chapter)
+- A data engineer must help put automation in place to ensure that all the datasets that are added to a data lake are cataloged and that the appropriate metadata is added
+    - AWS Glue **Crawlers**, a process that can be run to examine a data source, infer the schema of the data source, and then automatically populate the Glue data catalog with information on the dataset.
+    - A data engineer should consider building workflows that make use of Glue Crawlers to run after new data is ingested, to have the new data automatically added to the data catalog.
+    - When a new data engineering job is being bought into production, a check can be put in place to make sure that the Glue API is used to update the data catalog with details of the new data.
+- Automated methods should also be used to ensure that relevant metadata is added to the catalog whenever new data is created, such as by putting a method in place to ensure that the following metadata is added, along with all the new datasets:
+    - Data source
+    - Data owner
+    - Data sensitivity (public, general, sensitive, confidential, PII, and so on)
+    - Data lake zone (raw zone, transformed zone, enriched zone)
+    - Cost allocation tag (business unit name, department, and so on)
