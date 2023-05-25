@@ -85,3 +85,4 @@
         - How this dataset is related to other datasets
 
 ### Operational Catalog
+- **Operational Catalog** captures an operational view of processes and events occuring all along the path to information delivery, job scheduling information such as where the data is comming, how often it should be updated, and when wast the actual last update
