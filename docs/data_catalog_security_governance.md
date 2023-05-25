@@ -64,4 +64,24 @@
 - **Authorization** is the process of authorizing access to a resource based on a validated identity.
     - For a data analytics system, once you validate your identity with authentication, you need to be authorized to access specific datasets. A data lake administrator can, for example, authorize you to access data that is in the Conformed Zone of the data lake, but not grant you access to data in the Raw Zone.
 
+## Data Cataloging
+- **Swamps** are known to be wet areas that smell pretty bad, and where some trees and other vegetation may grow, but the area is generally not fit to be used for most purposes
+- **Lake is** beautiful scenery with clean water, a beautiful sunset, and perhaps a few ducks gently floating on the water.
 
+- **Data catalogs**:
+    - A data catalog enables business users to easily find datasets that may be useful to them, and to better understand the context around the dataset through metadata.
+    - Broadly speaking, there are two types of data catalogs – business catalogs and technical catalogs. However, many catalog tools offer aspects of both business and technical catalogs.
+### Technical Catalog
+- **Technical catalogs** are those that map data files in the data lake to a logical representation of those files in the form of databases and tables. In Chapter 3, The AWS Data Engineers Toolkit, we covered the AWS Glue service, which is an example of a data catalog tool with a technical focus.
+    - The **Hive Metastore** is a well-known catalog that stores technical metadata for Hive tables (such as the *table schema, location, and partition information*). These are primarily technical attributes of the table, and the AWS Glue data catalog is an example of a Hive-compatible Metastore (meaning analytic services designed to work with a Hive Metastore catalog can use the Glue catalog).
+### Business Catalog 
+- **Business catalog** focuses on enabling business metadata regarding the datasets to be captured and providing a catalog that is easy to search.
+    - For example, with a business catalog, you may capture details about the following:
+        - The owner of the dataset the business unit that the data relates to
+        - The owner of the dataset
+        - The source system(s) that the data comes from
+        - The confidentiality classification of the data (sensitive, confidential, PII, and so on)
+        - How often the data is updated (hourly, daily, or weekly)
+        - How this dataset is related to other datasets
+
+### Operational Catalog
