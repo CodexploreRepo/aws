@@ -8,3 +8,4 @@
 
 ## Appendix
 - [Terminology](./docs/terminology.md)
+- [AWS Cert](./docs/aws_cert.md)
