@@ -134,3 +134,12 @@
     - **CloudTrail management events** (a record of all usage of AWS APIs within an account)
     - **VPC flow logs** (a record of all network traffic within an AWS VPC)
     - **DNS logs** (a record of all DNS requests within your account)
+## AWS Services for Managing Identity and Permissions
+Two primary ways to manage which identities can access which resources:
+1. AWS Identity and Access Management (IAM) service
+2. AWS Lake Formation to manage data lake access
+
+### AWs IAM
+**AWS IAM** is a service that provides both authentication and authorization for the AWS Console, command-line interface (**CLI**), and application programming interface (**API**) calls.
+    - AWS IAM also supports a *federation of identities*, meaning that you can configure IAM to use another identity provider for authentication, such as Active Directory or Okta.
+    - For a deeper understanding of the AWS IAM service, refer to [AWS Identity and Access Management User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html).
