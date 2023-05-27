@@ -69,7 +69,10 @@
 ### Data Catalog Definition
 - **Data catalogs**:
     - A data catalog enables business users to easily find datasets that may be useful to them, and to better understand the context around the dataset through metadata.
-    - Broadly speaking, there are two types of data catalogs – business catalogs and technical catalogs. However, many catalog tools offer aspects of both business and technical catalogs.
+    - Broadly speaking, there are 2 types of data catalogs: 
+      - Business catalogs
+      - Technical catalogs. 
+    - However, many catalog tools offer aspects of both business and technical catalogs.
 
 ##### Organizational policies for capturing metadata
 - A policy needs to be enforced that ensures that all the data that is added to the data lake is captured in the data catalog. If data is added to the data lake and not captured in the catalog, you can very quickly end up with a data swamp – lots of data in the data lake but users are unable to find or understand the context of the data that is there.
