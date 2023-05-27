@@ -1,5 +1,9 @@
 # Daily Knowledge
 ## Day 1
+### Data Encryption
+- **AWS Key Management Service (KMS)** is to create and manage security keys for encrypting and decrypting data in AWS.
+  -  For example, in Amazon S3, you can enable **Amazon S3 Bucket Keys**, which configures an S3 Bucket Key to encrypt all new objects in the bucket with an AWS KMS Key. 
+- **AWS CloudTrail** is to log all use of AWS KMS keys. 
 ### Data Catalog
 - 2 types of data catalogs: business catalogs and technical catalogs
 - Within AWS, there are two services for interacting with the data catalog: `AWS Glue service`, `AWS Lake Formation`
