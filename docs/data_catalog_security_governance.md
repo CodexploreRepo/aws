@@ -116,7 +116,7 @@
 ### AWS Key Management Service (KMS)
 - AWS KMS simplifies the process of creating and managing security keys for encrypting and decrypting data in AWS.
 - The AWS KMS service is a core service in the AWS ecosystem, enabling users to easily manage data encryption across several AWS services.
-  - The full list of compatible services can be found at [AWS_Service_Integration](https://aws.amazon.com/kms/features/#AWS_Service_Integration).
+  - The full list of compatible services can be found at [AWS Service Integration](https://aws.amazon.com/kms/features/#AWS_Service_Integration).
 - **AWS CloudTrail**: Permissions can be granted to users to make use of the keys for encrypting and decrypting data, and all use of AWS KMS keys is logged in the CloudTrail. This enables an organization to easily audit the use of keys to encrypt and decrypt data.
   - For example, with Amazon S3, you can enable **Amazon S3 Bucket Keys**, which configures an S3 Bucket Key to encrypt all new objects in the bucket with an AWS KMS Key. This is significantly less expensive than using **Server Side Encryption – KMS (SSE-KMS)** to encrypt each object in a bucket with a unique key.
   - To learn more about configuring Amazon S3 Bucket Keys, see [S3 bucket key documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html).
