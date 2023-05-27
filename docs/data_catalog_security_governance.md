@@ -94,7 +94,7 @@
 #### Operational Catalog
 - **Operational Catalog** captures an operational view of processes and events occuring all along the path to information delivery, job scheduling information such as where the data is comming, how often it should be updated, and when wast the actual last update
 
-### AWS Data Catalog Service
+## AWS Data Catalog Service
 - Within AWS, there are two services for interacting with the data catalog.
     - `AWS Glue service`:  
       - AWS Glue **Catalog** is a Hive Metastore-compatible catalog that captures information about the underlying physical files and partitions.
@@ -110,3 +110,8 @@
     - Data sensitivity (public, general, sensitive, confidential, PII, and so on)
     - Data lake zone (raw zone, transformed zone, enriched zone)
     - Cost allocation tag (business unit name, department, and so on)
+
+## AWS services for Data Encryption and Security Monitoring
+-  Listing out AWS services that can be used to help protect and secure our data.
+### AWS Key Management Service (KMS)
+- 
