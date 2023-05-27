@@ -1,10 +1,13 @@
 # Daily Knowledge
 ## Day 1
+
 ###  Managing Identity and Permissions
 Two primary ways to manage which identities can access which resources:
 1. `AWS Identity and Access Management (IAM`) service
-  - **Federation of identities** meaning that you can configure IAM to use another identity provider for authentication, such as Active Directory or Okta.
 2. `AWS Lake Formation` to manage data lake access
+<br>
+
+- **Federation of identities** meaning that you can configure IAM to use another identity provider for authentication, such as Active Directory or Okta.
 ### Data Encryption
 - **AWS Key Management Service (KMS)** is to create and manage security keys for encrypting and decrypting data in AWS.
   -  For example, in Amazon S3, you can enable **Amazon S3 Bucket Keys**, which configures an S3 Bucket Key to encrypt all new objects in the bucket with an AWS KMS Key. 
