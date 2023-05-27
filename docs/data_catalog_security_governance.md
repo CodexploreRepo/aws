@@ -117,10 +117,20 @@
 - AWS KMS simplifies the process of creating and managing security keys for encrypting and decrypting data in AWS.
 - The AWS KMS service is a core service in the AWS ecosystem, enabling users to easily manage data encryption across several AWS services.
   - The full list of compatible services can be found at [AWS Service Integration](https://aws.amazon.com/kms/features/#AWS_Service_Integration).
-- **AWS CloudTrail**: Permissions can be granted to users to make use of the keys for encrypting and decrypting data, and all use of AWS KMS keys is logged in the CloudTrail. This enables an organization to easily audit the use of keys to encrypt and decrypt data.
+- **AWS CloudTrail** is to log all use of AWS KMS keys. This enables an organization to easily audit the use of keys to encrypt and decrypt data.
   - For example, with Amazon S3, you can enable **Amazon S3 Bucket Keys**, which configures an S3 Bucket Key to encrypt all new objects in the bucket with an AWS KMS Key. This is significantly less expensive than using **Server Side Encryption – KMS (SSE-KMS)** to encrypt each object in a bucket with a unique key.
   - To learn more about configuring Amazon S3 Bucket Keys, see [S3 bucket key documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html).
 - *Note 1:* If a KMS key is deleted, any data that has been encrypted with that key is effectively lost and cannot be decrypted 
   - &#8594; specify a waiting period of between 7 and 30 days before the key is deleted. 
   - During this waiting period, the key cannot be used, and you can configure a CloudWatch alarm to notify you if anyone attempts to use the key.
 - *Note 2:* If you use AWS Organizations to manage multiple AWS accounts as part of an organization, you can create a **Service Control Policy (SCP)** to prevent any user (even an administrative user) from deleting KMS keys in child accounts.
+### Amazon Macie
+- **Amazon Macie** is a managed service that uses machine learning, along with pattern matching, to discover and protect sensitive data. Amazon Macie identifies sensitive data, such as PII data, in an Amazon S3 bucket and provides alerts to warn administrators about the presence of such sensitive data.
+- Macie can identify items such as names, addresses, and credit card numbers that exist in files on S3.
+### GuardDuty
+**GuardDuty** is an intelligent threat detection service that uses machine learning to monitor your AWS account and provide proactive alerts about malicious activity and unauthorized behavior.
+- GuardDuty analyzes several AWS generated logs, including the following:
+    - **CloudTrail S3 data events** (a record of all actions taken on S3 objects)
+    - **CloudTrail management events** (a record of all usage of AWS APIs within an account)
+    - **VPC flow logs** (a record of all network traffic within an AWS VPC)
+    - **DNS logs** (a record of all DNS requests within your account)
