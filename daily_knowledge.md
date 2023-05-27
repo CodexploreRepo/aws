@@ -1,5 +1,8 @@
 # Daily Knowledge
 ## Day 1
+### Data Catalog
+- 2 types of data catalogs: business catalogs and technical catalogs
+- Within AWS, there are two services for interacting with the data catalog: `AWS Glue service`, `AWS Lake Formation`
 ### Data Lakehouse
 - **Data LakeHouse** store the data in S3 (data lake) and use Redshift Serverless as a processing platform along with Redshift Spectrum instead of maintaining Redshift Cluster as a Data Warehouse since maintaining Redshift Cluster is quite expensive
 ### Concepts
