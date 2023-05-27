@@ -111,7 +111,7 @@
     - Data lake zone (raw zone, transformed zone, enriched zone)
     - Cost allocation tag (business unit name, department, and so on)
 
-## AWS services for Data Encryption and Security Monitoring
+## AWS Services for Data Encryption and Security Monitoring
 -  Listing out AWS services that can be used to help protect and secure our data.
 ### AWS Key Management Service (KMS)
 - AWS KMS simplifies the process of creating and managing security keys for encrypting and decrypting data in AWS.
