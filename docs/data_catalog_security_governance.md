@@ -139,7 +139,15 @@ Two primary ways to manage which identities can access which resources:
 1. AWS Identity and Access Management (IAM) service
 2. AWS Lake Formation to manage data lake access
 
-### AWs IAM
+### AWS IAM
 **AWS IAM** is a service that provides both authentication and authorization for the AWS Console, command-line interface (**CLI**), and application programming interface (**API**) calls.
     - AWS IAM also supports a *federation of identities*, meaning that you can configure IAM to use another identity provider for authentication, such as Active Directory or Okta.
     - For a deeper understanding of the AWS IAM service, refer to [AWS Identity and Access Management User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html).
+#### IAM identities 
+- **AWS account root user**: strongly recommended that you do not use this identity to log in and perform everyday tasks, but rather create an IAM user for everyday use.
+- **IAM User**: This is an identity that you create and can be used to log in to the AWS Console, run CLI commands, or make API calls.
+  - The recommended method to provide access to AWS resources is to make the user part of a group that has relevant IAM policies attached.
+- **IAM User Groups**: You provide permissions (via IAM policies) to an IAM group, and all the members of that group then inherit those permissions.
+- **IAM roles: 
+  -  used to provide permissions to AWS resources (for example, to provide permissions to an AWS Lambda function so that the Lambda function can access specific AWS resources).
+  - used in identity federation, where a user is authenticated by an external system, and that user identity is then associated with an IAM role.
