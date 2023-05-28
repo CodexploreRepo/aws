@@ -148,6 +148,6 @@ Two primary ways to manage which identities can access which resources:
 - **IAM User**: This is an identity that you create and can be used to log in to the AWS Console, run CLI commands, or make API calls.
   - The recommended method to provide access to AWS resources is to make the user part of a group that has relevant IAM policies attached.
 - **IAM User Groups**: You provide permissions (via IAM policies) to an IAM group, and all the members of that group then inherit those permissions.
-- **IAM roles: 
+- **IAM roles**: 
   -  used to provide permissions to AWS resources (for example, to provide permissions to an AWS Lambda function so that the Lambda function can access specific AWS resources).
   - used in identity federation, where a user is authenticated by an external system, and that user identity is then associated with an IAM role.
