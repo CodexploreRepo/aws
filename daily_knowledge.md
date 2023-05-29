@@ -16,6 +16,10 @@ Two primary ways to manage which identities can access which resources:
   - **IAM Role**: 
     -  used to provide permissions to AWS resources (for example, to provide permissions to an AWS Lambda function so that the Lambda function can access specific AWS resources).
     - used in identity federation, where a user is authenticated by an external system, and that user identity is then associated with an IAM role.
+
+#### IAM user setup
+- `AdministratorAccess` policy: to provide the access to AWS services (can access, but not billing)
+- The recommended method to provide access to AWS resources is to make the user part of `a group` that has relevant IAM policies attached.
 ### Data Encryption
 - **AWS Key Management Service (KMS)** is to create and manage security keys for encrypting and decrypting data in AWS.
   -  For example, in Amazon S3, you can enable **Amazon S3 Bucket Keys**, which configures an S3 Bucket Key to encrypt all new objects in the bucket with an AWS KMS Key. 
