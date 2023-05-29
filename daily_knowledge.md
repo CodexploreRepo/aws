@@ -1,4 +1,8 @@
 # Daily Knowledge
+## Day 2
+### S3
+- Bucket name convention: `s3://<company>-<raw/clean/enriched>-<awsregion>-<awsaccountID>-<env>/source/source_region/table_name
+  - `env`: dev, test, prod 
 ## Day 1
 
 ###  Managing Identity and Permissions
