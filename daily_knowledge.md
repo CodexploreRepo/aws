@@ -1,8 +1,14 @@
 # Daily Knowledge
 ## Day 2
+### Data Type
+#### Parquet
+- [Parquet](https://www.linkedin.com/pulse/all-you-need-know-parquet-file-structure-depth-rohan-karanjawala/) file format consists of 2 parts:
+  - Data
+  - Metadata
 ### S3
 - Bucket name convention: `s3://<company>-<raw/clean/enriched>-<awsregion>-<awsaccountID>-<env>/source/source_region/table_name`
   - `env`: dev, test, prod 
+
 ## Day 1
 
 ###  Managing Identity and Permissions
