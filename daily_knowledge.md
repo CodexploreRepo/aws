@@ -7,7 +7,7 @@
   - Metadata
 ### S3
 - Bucket name convention: `s3://<company>-<raw/clean/enriched>-<awsregion>-<awsaccountID>-<env>/source/source_region/table_name`
-  - `env`: dev, test, prod 
+  - `env` dev, test, prod 
 
 ## Day 1
 
@@ -24,12 +24,20 @@ Two primary ways to manage which identities can access which resources:
     - The recommended method to provide access to AWS resources is to make the user part of a group that has relevant IAM policies attached.
   - **IAM User Groups**: You provide permissions (via IAM policies) to an IAM group, and all the members of that group then inherit those permissions.
   - **IAM Role**: 
-    -  used to provide permissions to AWS resources (for example, to provide permissions to an AWS Lambda function so that the Lambda function can access specific AWS resources).
+    - used to provide permissions to AWS resources (for example, to provide permissions to an AWS Lambda function so that the Lambda function can access specific AWS resources).
     - used in identity federation, where a user is authenticated by an external system, and that user identity is then associated with an IAM role.
 
-#### IAM user setup
-- `AdministratorAccess` policy: to provide the access to AWS services (can access, but not billing)
-- The recommended method to provide access to AWS resources is to make the user part of `a group` that has relevant IAM policies attached.
+### IAM policies
+- To grant authorization to access AWS resources, you can attach an **IAM policy** to an IAM user, IAM group, or IAM role.
+- Three types of **identity-based policies** that can be utilized:
+  - **AWS managed policies**: these are policies that are created and managed by AWS and provide permissions for common use cases. 
+    -  For example, the `AdministratorAccess` managed policy provides full access to every service and resource in AWS
+  - **Customer-managed policies**: these are policies that you create and manage to provide more precise control over your AWS resources. 
+  - **Inline policies**: These are policies that are written directly for a specific user, group, or role. 
+- Tips: 
+  - The recommended method to provide access to AWS resources is to make the user part of `a group` that has relevant IAM policies attached.
+  - To make managing large S3-based data lakes easier, AWS introduced a new service called AWS Lake Formation, which enables permissions for the data lake to be controlled by the data lake administrator from within the AWS Management Console
+
 ### Data Encryption
 - **AWS Key Management Service (KMS)** is to create and manage security keys for encrypting and decrypting data in AWS.
   -  For example, in Amazon S3, you can enable **Amazon S3 Bucket Keys**, which configures an S3 Bucket Key to encrypt all new objects in the bucket with an AWS KMS Key. 
