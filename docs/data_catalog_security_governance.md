@@ -141,8 +141,8 @@ Two primary ways to manage which identities can access which resources:
 
 ### AWS IAM
 **AWS IAM** is a service that provides both authentication and authorization for the AWS Console, command-line interface (**CLI**), and application programming interface (**API**) calls.
-    - AWS IAM also supports a *federation of identities*, meaning that you can configure IAM to use another identity provider for authentication, such as Active Directory or Okta.
-    - For a deeper understanding of the AWS IAM service, refer to [AWS Identity and Access Management User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html).
+- AWS IAM also supports a *federation of identities*, meaning that you can configure IAM to use another identity provider for authentication, such as Active Directory or Okta.
+- For a deeper understanding of the AWS IAM service, refer to [AWS Identity and Access Management User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html).
 #### IAM identities 
 - **AWS account root user**: strongly recommended that you do not use this identity to log in and perform everyday tasks, but rather create an IAM user for everyday use.
 - **IAM User**: This is an identity that you create and can be used to log in to the AWS Console, run CLI commands, or make API calls.
