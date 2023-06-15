@@ -158,3 +158,30 @@ Two primary ways to manage which identities can access which resources:
     -  For example, the `AdministratorAccess` managed policy provides full access to every service and resource in AWS
   - **Customer-managed policies**: these are policies that you create and manage to provide more precise control over your AWS resources. 
   - **Inline policies**: These are policies that are written directly for a specific user, group, or role. 
+- Example of a customer-managed policy that grants read access to a specific S3 bucket
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow", // Allows access for action of s3:ListBucket
+      "Action": ["s3:ListBucket"],
+      "Resource": "arn:aws:s3::: de-landing-zone"
+    },
+
+    {
+      "Effect": "Allow", // Allows access for action of s3:GetObject
+      "Action": ["s3:GetObject"],
+      "Resource": ["arn:aws:s3::: de-landing-zone/*"]
+    }
+  ],
+  "Condition": {
+    //  to limit this permission to users from a specific IP address
+    "IpAddress": {
+      "aws:SourceIp": ["12.13.15.16/32", "45.44.43.42/32"]
+    }
+  }
+}
+
+```
