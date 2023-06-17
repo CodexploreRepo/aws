@@ -13,4 +13,4 @@
   - Step 3: Once the folder is created, unzip the `.whl` files in the `python` folder as follows:
     - <img width="283" alt="Screenshot 2023-06-17 at 14 12 25" src="https://github.com/CodexploreRepo/aws/assets/64508435/82aeedc4-8c0e-4be9-8bfc-cfb344cede9b">
   - Step 4: zip the `python` folder to `python.zip` and add to Lambda layer
-    - NOTE: you can rename `python.zip` into other name after it is being zipped
+    - NOTE: you can rename `python.zip` into other name after it is zipped
