@@ -8,9 +8,9 @@
 - AWS Lambda works on Linux, only package that are **compiled** to run under a **Linux** environment can be used here.
   - For ex: `pandas` wheel (complied) file which works for Python 3.7 on AWS Lambda is `pandas-1.0.3-cp37-cp37m-manylinux1_x86_64.whl`
 - How to prepare the packages as a Lambda layer:
-  - Step 1: To get the linux compiled file, say `pandas`, `xldr`, `numpy` packages, go to the link: https://pypi.org/project/pandas/#files and download the relevant wheel (.whl) file.
+  - Step 1: To get the linux compiled file, say `pandas`, `xlrd`, `numpy` packages, go to the link: https://pypi.org/project/pandas/#files and download the relevant wheel (.whl) file.
   - Step 2: Create a folder named `python` (This name is very important)
-  - Step 3: Once the folder is created, unzip the `.whl` files in the `python` folder as follows:
+  - Step 3: Once the folder is created, unzip the `.whl` files using cmd `unzip xlrd-2.0.1-py2.py3-none-any.whl` in the `python` folder as follows:
     - <img width="283" alt="Screenshot 2023-06-17 at 14 12 25" src="https://github.com/CodexploreRepo/aws/assets/64508435/82aeedc4-8c0e-4be9-8bfc-cfb344cede9b">
   - Step 4: zip the `python` folder to `python.zip` and add to Lambda layer
     - NOTE: you can rename `python.zip` into other name after it is zipped
