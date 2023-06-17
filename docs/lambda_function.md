@@ -4,7 +4,7 @@
   - For example, an zip file of AWS Data Wrangler library in GitHub at [https://github.com/awslabs/aws-data-wrangler/releases](https://github.com/awslabs/aws-data-wrangler/releases). 
     - Under **Assets**, download the `awswrangler-layer-3.0.0-py3.9.zip` file to your local drive
 - There is a maximum of **5 layers** and a maximum size for all layers of **250 MB**.
-### How to install a pacakge in Lambda 
+### How to install pacakges as a Lambda layer
 - AWS Lambda works on Linux, only package that are **compiled** to run under a **Linux** environment can be used here.
   - For ex: `pandas` wheel (complied) file which works for Python 3.7 on AWS Lambda is `pandas-1.0.3-cp37-cp37m-manylinux1_x86_64.whl`
 - How to prepare the packages as a Lambda layer:
