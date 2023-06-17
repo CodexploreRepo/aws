@@ -15,4 +15,8 @@
   - Uncheck "Use only IAM access control for new tables in this database" since we will use Lake Formation to control the access of tables in the database
 <p align="center"><img width="600" alt="Screenshot 2023-06-17 at 18 53 47" src="https://github.com/CodexploreRepo/aws/assets/64508435/b1df2f53-6a51-47c0-bf25-66796f6bb9c1"></p>
 
+- Step 5: Create Table in a database
+  - Note: you have to Grant Permission to the table 
+<p align="center"><img width="690" alt="Screenshot 2023-06-17 at 19 15 45" src="https://github.com/CodexploreRepo/aws/assets/64508435/09a46907-7f7b-4248-9296-0195c32700cf"></p>
+
 
