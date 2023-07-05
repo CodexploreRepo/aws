@@ -5,8 +5,10 @@
 Kinesis Data Firehose (serverless) automatically scales up and down in response to message throughput changes without requiring any configuration.
 - **Kinesis Data Firehose** (serverless) automatically scales up and down in response to message throughput changes without requiring any configuration.
   - Much quicker and easier to set up and configure 
-- **Amazon MSK** is a managed service, meaning AWS manages the infrastructure for you, but you still need to be aware of and make decisions about the underlying compute infrastructure and software such as selecting from a list of instance types to power your MSK cluster, configuring VPC network settings, and also fine-tuning a range of Kafka configuration settings. You also need to select the version of Kafka that you want to use with the service.
+  - Amazon Kinesis is proprietary software created by AWS, although there are some limited open source elements, such as the Kinesis Agent.
+- **Amazon MSK** (a managed version of Apache Kafka) is a managed service, meaning AWS manages the infrastructure for you, but you still need to be aware of and make decisions about the underlying compute infrastructure and software such as selecting from a list of instance types to power your MSK cluster, configuring VPC network settings, and also fine-tuning a range of Kafka configuration settings. You also need to select the version of Kafka that you want to use with the service.
   - Provides a lot more options for configuring and fine-tuning the underlying software.
+  - there is a large community of contributors to the software, and a large ecosystem providing a diverse range of connectors and integrations. Kafka provides out-of-the-box integration with hundreds of event sources and event sinks (including AWS services such as Amazon S3, but also many other popular products, such as PostgreSQL, Elasticsearch, and others).
 ### Data Type
 #### Parquet
 - [Parquet](https://www.linkedin.com/pulse/all-you-need-know-parquet-file-structure-depth-rohan-karanjawala/) file format consists of 2 parts:
