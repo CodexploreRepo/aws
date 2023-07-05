@@ -2,6 +2,9 @@
 ## Day 2
 ### Kafka
 - Amazon Kinesis and Amazon MSK are services from AWS that offer pub-sub message processing. That is, producers create messages that are written to the streaming service (Kinesis or MSK), and consumers subscribe to receive messages from the service. This is commonly used as a way to decouple applications producing streaming data from applications that are consuming data. Both services can scale up to handle millions of messages per second.
+Kinesis Data Firehose (serverless) automatically scales up and down in response to message throughput changes without requiring any configuration.
+- **Kinesis Data Firehose** (serverless) automatically scales up and down in response to message throughput changes without requiring any configuration.
+- **Amazon MSK** is a managed service, meaning AWS manages the infrastructure for you, but you still need to be aware of and make decisions about the underlying compute infrastructure and software such as selecting from a list of instance types to power your MSK cluster, configuring VPC network settings, and also fine-tuning a range of Kafka configuration settings. You also need to select the version of Kafka that you want to use with the service.
 ### Data Type
 #### Parquet
 - [Parquet](https://www.linkedin.com/pulse/all-you-need-know-parquet-file-structure-depth-rohan-karanjawala/) file format consists of 2 parts:
