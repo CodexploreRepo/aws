@@ -3,7 +3,7 @@
 ### Kafka
 - Amazon Kinesis and Amazon MSK are services from AWS that offer pub-sub message processing. That is, producers create messages that are written to the streaming service (Kinesis or MSK), and consumers subscribe to receive messages from the service. This is commonly used as a way to decouple applications producing streaming data from applications that are consuming data. Both services can scale up to handle millions of messages per second.
 Kinesis Data Firehose (serverless) automatically scales up and down in response to message throughput changes without requiring any configuration.
-- **Kinesis Data Firehose** (serverless) automatically scales up and down in response to message throughput changes without requiring any configuration.
+- **Amazon Kinesis** is a serverless service, meaning that you never need to make decisions about, manage, or know anything about the underlying servers that run the service. For example, Kinesis Data Firehose automatically scales up and down in response to message throughput changes without requiring any configuration.
   - Much quicker and easier to set up and configure 
   - Amazon Kinesis is proprietary software created by AWS, although there are some limited open source elements, such as the Kinesis Agent.
   - Kinesis also provides integration with a limited set of external services such as Splunk and DataDog through **Amazon Kinesis Data Firehose**.
