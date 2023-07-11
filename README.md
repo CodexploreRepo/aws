@@ -7,6 +7,8 @@
 - [Data Cataloging, Security, and Governance](./docs/data_catalog_security_governance.md)
 ## AWS Services
 - [AWS Lambda](./docs/lambda_function.md)
+## General Knowledge
+- [Parquet](./docs/parquet.md)
 ## Appendix
 - [Terminology](./docs/terminology.md)
 - [AWS Cert](./docs/aws_cert.md)
