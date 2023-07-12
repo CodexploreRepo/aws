@@ -1,5 +1,9 @@
 # Daily Knowledge
 ## Day 2
+### Hive, MapReduce, and Apache Spark
+- **Apache Hive** provides a SQL-type interface for working with large datasets
+- **MapReduce** provides a code-based approach to processing large datasets. 
+- **Hadoop MapReduce vs Apache Spark**:  the biggest difference being that *Apache Spark does all processing in memory*. Apache MapReduce on the other hand *makes extensive use of traditional disk-based reads and writes* to interim storage during processing.
 ### Kafka
 - Amazon Kinesis and Amazon MSK are services from AWS that offer pub-sub message processing. That is, producers create messages that are written to the streaming service (Kinesis or MSK), and consumers subscribe to receive messages from the service. This is commonly used as a way to decouple applications producing streaming data from applications that are consuming data. Both services can scale up to handle millions of messages per second.
 Kinesis Data Firehose (serverless) automatically scales up and down in response to message throughput changes without requiring any configuration.
