@@ -3,6 +3,7 @@
   - `Athena Federated Query`, a feature of Athena, enables you to build connectors so that Athena can query other data sources, beyond just the data in an S3 data lake.
 - `Glue` is fully managed ETL (extract, transform, and load) AWS service to analyze and categorize data. 
   - In an ETL pipeline, transformations are performed outside the data warehouse using custom scripts, a cloud-native ETL service such as AWS Glue, or a specialized ETL tool from a commercial vendor such as Informatica, Talend, DataStage, Microsoft, or Pentaho. 
+  - **Glue Studio**, a service that provides a visual interface to developing Apache Spark transformations
   - Glue includes a number of components as follows:
     - `Serverless Apache Spark` or `Python shell` environment for performing ETL transformations
     - `Glue Data Catalog`, which provides a centralized logical representation (database and tables) of the data in an Amazon S3 data lake
