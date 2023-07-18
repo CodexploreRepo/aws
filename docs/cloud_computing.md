@@ -26,8 +26,12 @@
 - Hard-drives: block-based storage systems
   - File System: Fat32 & NTFS (Windows)
 - Network Attached Storage (NAS): file-based storage system (mounted to OS using a network share)
-<p align="center"><img width="800" alt="Screenshot 2023-07-19 at 06 42 31" src="https://github.com/CodexploreRepo/aws/assets/64508435/9c6001a8-60c7-4f0c-a6c3-0aefa52c7119"></p>
 - Object Storage Systems: upload objects (file, video, image) using a web broswer to *Object Storage container* via **HTTP protocol** with a **REST API** (GET, PUT, POST, SELECT, DELETE)
   -  Object Storage container: there is no hierachy of objects in the container
 
-  
+### IP address
+- IP address are to the address computers use to communicate
+- DNS: to map IP address with the domain
+
+#### What is IPv4 address
+- `192.168.0.1`
