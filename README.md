@@ -20,8 +20,10 @@
 
 - [AWS CLI](./docs/aws_cli.md)
 - [AWS IAM](./docs/aws_iam.md)
+
 ## General Knowledge
 
+- [Cloud Computing](./docs/cloud_computing.md)
 - [Parquet](./docs/parquet.md)
 
 ## Appendix
