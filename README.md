@@ -11,15 +11,15 @@
 
 ## AWS Services
 
-- [AWS Glue](./docs/glue.md)
-- [AWS Glue PySpark](./docs/glue_pyspark.md)
-- [AWS Lake Formation](./docs/lake_formation.md)
-- [AWS Lambda](./docs/lambda_function.md)
+- [Glue](./docs/glue.md)
+- [Glue PySpark](./docs/glue_pyspark.md)
+- [Lake Formation](./docs/lake_formation.md)
+- [Lambda](./docs/lambda_function.md)
 
 ## Onboard
 
 - [AWS CLI](./docs/aws_cli.md)
-
+- [AWS IAM](./docs/aws_iam.md)
 ## General Knowledge
 
 - [Parquet](./docs/parquet.md)
