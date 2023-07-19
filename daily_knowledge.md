@@ -21,6 +21,7 @@ os._exit(0) # Using a 0 status code throws no exception so your job completes wi
 logger = glueContext.get_logger()
 ```
 
+- **AWS Glue DataBrew**: using DataBrew, data analysts can easily cleanse new data sources and transform and join data from different tables to create new datasets. This can all be done with the Glue DataBrew visual interface, without the data analyst needing to write any code:
 ## Day 2
 
 ### Hive, MapReduce, and Apache Spark
