@@ -35,11 +35,26 @@ export AWS_DEFAULT_PROFILE=MyProfile
 export AWS_DEFAULT_PROFILE=default
 ```
 
-## AWS Config
+## `~/.aws/` folder
 
-- AWS Config file is located at `~/.aws/config` in your PC
-- You can set `export AWS_DEFAULT_PROFILE=quannguyen`
-
+- AWS config file, located at `~/.aws/config` in your PC, is to store aws configuration
+```bash
+~ cat ~/.aws/config
+[default]
+region = ap-southeast-1
+[profile quannguyen]
+region = ap-southeast-1
+```
+- AWS credential file, located at `~/.aws/credentials` in your PC, is to store aws credentials for each profile
+```bash
+~ cat ~/.aws/credentials
+[default]
+aws_access_key_id = 
+aws_secret_access_key = 
+[quannguyen]
+aws_access_key_id = 
+aws_secret_access_key = 
+``` 
 ## S3 Commands
 
 - To create an S3 bucket: `aws s3 mb s3://<bucket-name>`
