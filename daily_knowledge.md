@@ -1,6 +1,12 @@
 # Daily Knowledge
-
+## Day 4
+### RDS
+- Problem: unable to access the DB in RDS, even though set-ed up the inbound rule to allow the traffic to access DB
+  - Solution: Ensure that `Publicly accessible = YES` if you wants to access the instance locally
+    - Can click “Modify” and change to YES under the configuration
+  <p align="center"><img width="766" alt="Screenshot 2023-09-01 at 23 40 53" src="https://github.com/CodexploreRepo/aws/assets/64508435/e21e30bb-d6d6-428a-9cd9-a6da4bbb51c8"></p>
 ## Day 3
+
 
 ### Glue
 
