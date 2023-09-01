@@ -15,7 +15,8 @@
 - [Glue PySpark](./docs/glue_pyspark.md)
 - [Lake Formation](./docs/lake_formation.md)
 - [Lambda](./docs/lambda_function.md)
-
+- [RDS](./docs/aws_rds.md)
+  
 ## Onboard
 
 - [AWS CLI](./docs/aws_cli.md)
